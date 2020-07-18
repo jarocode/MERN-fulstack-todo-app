@@ -30,7 +30,7 @@ const Todo = ({todo, handleComplete, index, completed, handleRemove}) => {
        background: ${hex}; 
     `
     
-    
+    //return area
     return ( 
         <Todo>
             <Text>
