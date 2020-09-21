@@ -1,4 +1,4 @@
-import React, {useState, createContext} from 'react';
+import React, {useState, createContext, useEffect} from 'react';
 
 export const TodoContext = createContext();
 
@@ -7,6 +7,20 @@ export const TodoProvider = (props) => {
         
     ]) 
 
+    useEffect (() => {
+        const getApi = async () => {
+            const todos = await fetch('/getTodo');
+            const Res = await todos.json();
+            return Res;
+        }
+        getApi().then(res => {
+            const {data} = res;
+            setTodos(data);
+            console.log(data);
+        })
+
+    },[]);
+    
     const [inputText, setInputText] = useState('');
 
     

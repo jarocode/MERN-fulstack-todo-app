@@ -9,12 +9,23 @@ const Todoheader = () => {
     const [todosValue, setTodosValue] = todos;
     const [inputTextValue, setInputTextValue] = inputText;
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+         await fetch('/addTodo', {
+            method: 'POST',
+            body: JSON.stringify({todo :inputTextValue}),
+            headers: {
+                "Content-type" : "application/json"
+            }
+        })
+        // const addedTodo = await add.json();
+        
         setTodosValue(prevTodo => 
-            [...prevTodo, {todo: inputTextValue, id: todosValue.length}])
+            [...prevTodo, {todo: inputTextValue}])
             console.log(todosValue);
+        
         setInputTextValue('');
+        
     }
     
     const handleChange = e => {

@@ -12,7 +12,11 @@ const Todostate = () => {
         setTodosValue(newTodo);
     }
     
-    const handleRemove = (index) => {
+    
+    const handleRemove = async (index, id) => {
+        await fetch(`/addTodo/${id}`, {
+            method: 'DELETE'
+        });
         
         const newTodo = [...todosValue];
         newTodo.splice(index, 1);
@@ -25,10 +29,10 @@ const Todostate = () => {
                 <Todo 
                 todo={todo.todo} 
                 completed={todo.completed} 
-                key={todo.id}
+                key={todo._id}
+                ind = {todo._id}
                 index={index}
                 handleComplete={handleComplete}
-                completed = {todo.completed}
                 handleRemove = {handleRemove}
                 />
             ))}

@@ -1,36 +1,38 @@
 {
-  "name": "jaros",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@emotion/core": "^10.0.28",
-    "@emotion/styled": "^10.0.27",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
-  },
+  "name": "jaronode",
+  "version": "1.0.0",
+  "description": "first node project",
+  "main": "jaros.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "node jaros",
+    "jaros": "nodemon jaros",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run jaros\" \"npm run client\""
   },
-  "eslintConfig": {
-    "extends": "react-app"
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "errorhandler": "^1.5.1",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
+    "express-session": "^1.17.1",
+    "jade": "^1.11.0",
+    "json": "^9.0.6",
+    "jsonwebtoken": "^8.5.1",
+    "logger": "0.0.1",
+    "method-override": "^3.0.0",
+    "mime": "^2.4.6",
+    "mongoose": "^5.9.25",
+    "morgan": "^1.10.0",
+    "nano": "^8.2.2",
+    "serve-favicon": "^2.5.0",
+    "url": "^0.11.0"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.4"
   }
 }

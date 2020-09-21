@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import styled from '@emotion/styled';
 
 
-const Todo = ({todo, handleComplete, index, completed, handleRemove}) => {
+const Todo = ({todo, handleComplete, ind,index, completed, handleRemove}) => {
     
     let R = '';
     let B = '';
@@ -46,7 +46,7 @@ const Todo = ({todo, handleComplete, index, completed, handleRemove}) => {
                            fontWeight: completed? 'bold' : 'normal'
                }}>{todo}</p> 
                
-               <button onClick={() => handleRemove(index)}>remove</button>
+               <button onClick={() => handleRemove(index, ind)}>remove</button>
             </Text>
         </Todo>
      );
